@@ -1,1283 +1,1019 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ishani Prabhudesai — Robotics Systems Engineer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #fafaf8;
-    --surface: #ffffff;
-    --border: #e8e6e0;
-    --text: #1a1a17;
-    --muted: #6b6a65;
-    --accent: #2a5a3a;
-    --accent-light: #edf4ef;
-    --accent-mid: #3d7a52;
-    --tag-bg: #f0f0ec;
-    --tag-text: #3a3a35;
-    --nav-h: 64px;
-    --max: 920px;
-  }
-
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    font-size: 16px;
-    line-height: 1.7;
-  }
-
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    height: var(--nav-h);
-    background: rgba(250,250,248,0.93);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-    display: flex; align-items: center;
-  }
-
-  .nav-inner {
-    max-width: var(--max);
-    margin: 0 auto;
-    width: 100%;
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .nav-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.1rem;
-    color: var(--text);
-    text-decoration: none;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 0.8rem;
-    color: var(--muted);
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--accent); }
-
-  .nav-cta {
-    font-size: 0.82rem;
-    font-weight: 500;
-    background: var(--accent);
-    color: #fff;
-    padding: 8px 18px;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-
-  .nav-cta:hover { background: var(--accent-mid); }
-
-  section { padding: 5rem 2rem; }
-  .container { max-width: var(--max); margin: 0 auto; }
-
-  .section-label {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.6rem;
-  }
-
-  h2.section-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 1.2;
-    color: var(--text);
-    margin-bottom: 2.2rem;
-  }
-
-  #hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding-top: var(--nav-h);
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .hero-banner-full {
-    width: 100%;
-    height: 160px;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
-
-  .hero-banner-full img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
-    display: block;
-  }
-
-  .hero-content {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 3rem 2rem 4rem;
-  }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 260px;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.76rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .hero-eyebrow::before {
-    content: '';
-    display: inline-block;
-    width: 24px;
-    height: 1px;
-    background: var(--accent);
-  }
-
-  h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    font-weight: 400;
-    line-height: 1.06;
-    color: var(--text);
-    margin-bottom: 1rem;
-  }
-
-  .hero-title-sub {
-    font-size: 1.12rem;
-    font-weight: 400;
-    color: var(--accent-mid);
-    margin-top: 0.2rem;
-    margin-bottom: 1.2rem;
-    min-height: 1.6rem;
-  }
-
-  .hero-sub {
-    font-size: 1rem;
-    color: var(--muted);
-    max-width: 560px;
-    margin-bottom: 2rem;
-    line-height: 1.8;
-  }
-
-  .hero-sub strong { color: var(--text); }
-
-  .hero-btns {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    background: var(--accent);
-    color: #fff;
-    padding: 11px 24px;
-    border-radius: 100px;
-    text-decoration: none;
-    font-size: 0.88rem;
-    font-weight: 500;
-    transition: background 0.2s;
-  }
-
-  .btn-primary:hover { background: var(--accent-mid); }
-
-  .btn-secondary {
-    border: 1px solid var(--border);
-    background: var(--surface);
-    color: var(--text);
-    padding: 11px 24px;
-    border-radius: 100px;
-    text-decoration: none;
-    font-size: 0.88rem;
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .hero-photo-placeholder {
-    width: 260px;
-    height: 360px;
-    border-radius: 14px;
-    background: var(--accent-light);
-    border: 3px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .hero-photo-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-  }
-
-  .hero-stats {
-    display: flex;
-    gap: 2.5rem;
-    margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
-    flex-wrap: wrap;
-  }
-
-  .hero-stat-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.7rem;
-    color: var(--text);
-  }
-
-  .hero-stat-label {
-    font-size: 0.79rem;
-    color: var(--muted);
-    max-width: 160px;
-  }
-
-  #about {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .about-text p {
-    color: var(--muted);
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .about-text strong { color: var(--text); }
-
-  .about-highlights {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .highlight-card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.25rem 1.5rem;
-  }
-
-  .highlight-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.35rem;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 0.35rem;
-  }
-
-  .highlight-desc {
-    font-size: 0.84rem;
-    color: var(--muted);
-  }
-
-  .exp-list { display: flex; flex-direction: column; }
-
-  .exp-item, .edu-item {
-    display: grid;
-    grid-template-columns: 155px 1fr;
-    gap: 2rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .exp-item:first-child, .edu-item:first-child {
-    border-top: 1px solid var(--border);
-  }
-
-  .exp-date, .edu-year {
-    font-size: 0.8rem;
-    color: var(--muted);
-    padding-top: 0.2rem;
-    line-height: 1.5;
-  }
-
-  .exp-role, .edu-degree {
-    font-size: 0.98rem;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 0.15rem;
-  }
-
-  .exp-company, .edu-school {
-    font-size: 0.88rem;
-    color: var(--accent-mid);
-    margin-bottom: 0.6rem;
-  }
-
-  .exp-desc, .edu-detail {
-    font-size: 0.88rem;
-    color: var(--muted);
-    line-height: 1.65;
-  }
-
-  .exp-desc ul {
-    padding-left: 1.2rem;
-    margin-top: 0.4rem;
-  }
-
-  .exp-desc li { margin-bottom: 0.4rem; }
-
-  .tag {
-    display: inline-block;
-    background: var(--tag-bg);
-    color: var(--tag-text);
-    font-size: 0.71rem;
-    padding: 3px 10px;
-    border-radius: 100px;
-    margin: 0.5rem 0.25rem 0 0;
-  }
-
-  #skills {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .skills-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .skill-group-label {
-    font-size: 0.76rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.7rem;
-  }
-
-  .skill-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.45rem;
-  }
-
-  .skill-pill {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-size: 0.84rem;
-    padding: 6px 14px;
-    border-radius: 100px;
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .skill-pill:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-  }
-
-  .project-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1.75rem;
-    transition: border-color 0.2s, transform 0.2s;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .project-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-  }
-
-  .project-icon {
-    width: 36px;
-    height: 36px;
-    background: var(--accent-light);
-    border-radius: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    font-size: 17px;
-  }
-
-  .project-cat {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.35rem;
-  }
-
-  .project-title {
-    font-size: 0.98rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: var(--text);
-  }
-
-  .project-desc {
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.62;
-    flex: 1;
-  }
-
-  .project-footer {
-    margin-top: 1.25rem;
-    display: flex;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .project-arrow {
-    margin-left: auto;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 1rem;
-    flex-shrink: 0;
-    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
-  }
-
-  .project-arrow:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
-    transform: translateX(2px);
-  }
-
-  .pub-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1.75rem 2rem;
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-
-  .pub-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-  }
-
-  .pub-badge {
-    flex-shrink: 0;
-    background: var(--accent-light);
-    color: var(--accent);
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 6px 12px;
-    border-radius: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-top: 0.2rem;
-  }
-
-  .pub-body { flex: 1; }
-
-  .pub-title {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 0.4rem;
-    line-height: 1.45;
-  }
-
-  .pub-meta {
-    font-size: 0.82rem;
-    color: var(--accent-mid);
-    margin-bottom: 0.5rem;
-  }
-
-  .pub-desc {
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.62;
-    margin-bottom: 1rem;
-  }
-
-  .pub-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--accent);
-    text-decoration: none;
-    border: 1px solid var(--accent);
-    padding: 5px 14px;
-    border-radius: 100px;
-    transition: background 0.2s, color 0.2s;
-  }
-
-  .pub-link:hover {
-    background: var(--accent);
-    color: #fff;
-  }
-
-  .blogs-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-  }
-
-  .blog-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1.75rem;
-    transition: border-color 0.2s;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .blog-card:hover { border-color: var(--accent); }
-
-  .blog-tag {
-    display: inline-block;
-    background: var(--accent-light);
-    color: var(--accent);
-    font-size: 0.71rem;
-    padding: 3px 10px;
-    border-radius: 100px;
-    margin-bottom: 0.85rem;
-    font-weight: 500;
-  }
-
-  .blog-title {
-    font-size: 0.97rem;
-    font-weight: 500;
-    margin-bottom: 0.45rem;
-    line-height: 1.4;
-    color: var(--text);
-  }
-
-  .blog-excerpt {
-    font-size: 0.84rem;
-    color: var(--muted);
-    line-height: 1.62;
-    flex: 1;
-  }
-
-  .blog-meta {
-    font-size: 0.77rem;
-    color: var(--muted);
-    margin-top: 1rem;
-  }
-
-  .blog-substack-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-top: 2rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    padding: 8px 20px;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-  }
-
-  .blog-substack-btn:hover {
-    background: var(--accent);
-    color: #fff;
-  }
-
-  #contact {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .contact-text p {
-    color: var(--muted);
-    font-size: 0.95rem;
-  }
-
-  .contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-  }
-
-  .contact-link {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 0.88rem;
-    color: var(--text);
-    text-decoration: none;
-    padding: 0.75rem 1rem;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .contact-link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .contact-icon {
-    font-size: 0.95rem;
-    width: 20px;
-    text-align: center;
-    flex-shrink: 0;
-  }
-
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 12px 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    color: var(--text);
-    outline: none;
-    transition: border-color 0.2s;
-    resize: vertical;
-  }
-
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    border-color: var(--accent);
-  }
-
-  .contact-form textarea { min-height: 120px; }
-
-  .contact-form button {
-    align-self: flex-start;
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    padding: 12px 28px;
-    border-radius: 100px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-
-  .contact-form button:hover { background: var(--accent-mid); }
-
-  footer {
-    padding: 2rem;
-    text-align: center;
-    font-size: 0.79rem;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-  }
-
-  .fade-in {
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity 0.55s ease, transform 0.55s ease;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  @media (max-width: 700px) {
-    .nav-links { display: none; }
-    .hero-banner-full { height: 110px; }
-    .hero-content { padding: 2rem 1.25rem 3rem; }
-    .hero-grid { grid-template-columns: 1fr; }
-    .hero-photo-placeholder { display: none; }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; }
-    .exp-item, .edu-item { grid-template-columns: 1fr; gap: 0.4rem; }
-    .projects-grid, .blogs-grid { grid-template-columns: 1fr; }
-    .hero-stats { gap: 1.5rem; }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ishani Prabhudesai — Robotics Systems Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #06080d;
+      --bg-soft: #0b1017;
+      --card: #0f1621;
+      --card-2: #121b28;
+      --border: rgba(140, 180, 255, 0.14);
+      --text: #f5f7fb;
+      --muted: #9aa7bd;
+      --accent: #7cf3ff;
+      --accent-2: #93a8ff;
+      --glow: 0 0 40px rgba(124, 243, 255, 0.12);
+      --max: 1080px;
+      --nav-h: 72px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124,243,255,0.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(147,168,255,0.10), transparent 28%),
+        linear-gradient(180deg, #05070b 0%, #06080d 100%);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.35), transparent 80%);
+      z-index: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      z-index: 100;
+      background: rgba(6, 8, 13, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border: 1px solid rgba(124,243,255,0.26);
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      transition: 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: rgba(124,243,255,0.08);
+      box-shadow: var(--glow);
+    }
+
+    section {
+      padding: 88px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.5rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .section-copy {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    #hero {
+      min-height: 100vh;
+      padding-top: calc(var(--nav-h) + 48px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(124,243,255,0.5);
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      line-height: 0.98;
+      margin-bottom: 14px;
+    }
+
+    .hero-title-sub {
+      font-size: 1.06rem;
+      color: var(--accent-2);
+      margin-bottom: 18px;
+      min-height: 28px;
+      font-weight: 500;
+    }
+
+    .hero-copy {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-copy strong { color: var(--text); }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 34px;
+    }
+
+    .btn-primary, .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, rgba(124,243,255,0.16), rgba(147,168,255,0.18));
+      border: 1px solid rgba(124,243,255,0.28);
+      color: var(--text);
+      box-shadow: var(--glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(90deg, rgba(124,243,255,0.22), rgba(147,168,255,0.22));
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.10);
+      color: var(--text);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(124,243,255,0.28);
+      color: var(--accent);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .meta-pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .orb {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(124,243,255,0.25), transparent 35%),
+        radial-gradient(circle at 70% 70%, rgba(147,168,255,0.25), transparent 40%),
+        rgba(124,243,255,0.03);
+      filter: blur(6px);
+      box-shadow: 0 0 80px rgba(124,243,255,0.12);
+      animation: pulse 6s ease-in-out infinite;
+    }
+
+    .robot-card {
+      width: 100%;
+      max-width: 380px;
+      background: linear-gradient(180deg, rgba(18,27,40,0.92), rgba(11,16,23,0.96));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35), var(--glow);
+      overflow: hidden;
+    }
+
+    .robot-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(124,243,255,0.08), transparent 35%, transparent 60%, rgba(147,168,255,0.08));
+      pointer-events: none;
+    }
+
+    .robot-head {
+      width: 124px;
+      height: 124px;
+      border-radius: 28px;
+      margin: 0 auto 22px;
+      border: 1px solid rgba(124,243,255,0.22);
+      background: linear-gradient(180deg, rgba(8,15,24,0.96), rgba(18,27,40,0.9));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: inset 0 0 20px rgba(124,243,255,0.06);
+    }
+
+    .robot-head::before, .robot-head::after {
+      content: "";
+      position: absolute;
+      top: -14px;
+      width: 18px;
+      height: 24px;
+      border: 1px solid rgba(124,243,255,0.18);
+      background: rgba(124,243,255,0.06);
+      border-radius: 14px 14px 4px 4px;
+    }
+
+    .robot-head::before { left: 22px; }
+    .robot-head::after { right: 22px; }
+
+    .eyes {
+      display: flex;
+      gap: 16px;
+    }
+
+    .eye {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 20px rgba(124,243,255,0.8);
+      animation: blink 4.5s infinite;
+    }
+
+    .robot-lines {
+      display: grid;
+      gap: 12px;
+    }
+
+    .line {
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(124,243,255,0.14), rgba(147,168,255,0.05));
+      border: 1px solid rgba(124,243,255,0.10);
+    }
+
+    .line:nth-child(1) { width: 78%; }
+    .line:nth-child(2) { width: 92%; }
+    .line:nth-child(3) { width: 66%; }
+    .line:nth-child(4) { width: 84%; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(15,22,33,0.92), rgba(11,16,23,0.98));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.22);
+    }
+
+    .about-copy {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .about-copy p + p { margin-top: 14px; }
+
+    .mini-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .mini-item {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .mini-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .mini-item span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 22px;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(15,22,33,0.90), rgba(11,16,23,0.96));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+    }
+
+    .exp-date {
+      color: var(--accent);
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .exp-role {
+      font-size: 1.04rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .exp-company {
+      color: var(--accent-2);
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+    }
+
+    .exp-copy {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .skills-wrap {
+      display: grid;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .skill-group {
+      background: linear-gradient(180deg, rgba(15,22,33,0.92), rgba(11,16,23,0.98));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .skill-group h3 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .pill-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      font-size: 0.88rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .project-card {
+      background: linear-gradient(180deg, rgba(15,22,33,0.92), rgba(11,16,23,0.98));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(124,243,255,0.26);
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .project-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(124,243,255,0.08);
+      border: 1px solid rgba(124,243,255,0.18);
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+
+    .project-link {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .project-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .project-copy {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 14px;
+    }
+
+    .personality-box {
+      margin-top: 28px;
+      padding: 22px 24px;
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(15,22,33,0.88), rgba(11,16,23,0.98));
+      border: 1px solid rgba(147,168,255,0.14);
+    }
+
+    .personality-box h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .personality-box p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .contact-box {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 26px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(15,22,33,0.94), rgba(11,16,23,0.98));
+      border: 1px solid var(--border);
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+      transition: 0.2s ease;
+    }
+
+    .contact-link:hover {
+      color: var(--accent);
+      border-color: rgba(124,243,255,0.22);
+    }
+
+    footer {
+      padding: 26px 24px 40px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes blink {
+      0%, 44%, 48%, 100% { transform: scaleY(1); opacity: 1; }
+      46% { transform: scaleY(0.1); opacity: 0.6; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.92; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .hero-grid,
+      .grid-2,
+      .projects-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 300px;
+      }
+
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#blogs">Writing</a></li>
-      <li><a href="#publications">Publication</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta" style="margin-right: 2rem;">Get in touch</a>
-  </div>
-</nav>
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">ISHANI / ROBOTICS</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Let’s Connect</a>
+    </div>
+  </nav>
 
-<section id="hero">
-  <div class="hero-banner-full">
-    <img src="columbia-banner.JPG" alt="Columbia University" />
-  </div>
-
-  <div class="hero-content">
+  <section id="hero">
     <div class="container">
       <div class="hero-grid">
         <div>
-          <p class="hero-eyebrow">Robotics · Controls · Automation · Intelligent Systems</p>
-          <h1>Ishani Prabhudesai</h1>
-          <p class="hero-title-sub"><span class="rotating-title">Robotics Systems Engineer</span></p>
-          <p class="hero-sub">
-            I build systems that connect <strong>data, decision, and physical action</strong>.
-            My work lives at the intersection of robotics, control systems, automation, and intelligent infrastructure—
-            from electro-mechanical production systems to machines that sense, decide, and act in the real world.
+          <div class="eyebrow">Robotics · Controls · Automation</div>
+          <h1>Ishani<br>Prabhudesai</h1>
+          <div class="hero-title-sub"><span class="rotating-title">Robotics Systems Engineer</span></div>
+          <p class="hero-copy">
+            Robotics engineer building <strong>control systems, automation, and intelligent hardware</strong> for real-world machines.
+            Tesla + Columbia. Interested in robotics, autonomy, manufacturing systems, and physical AI.
           </p>
 
           <div class="hero-btns">
-            <a href="#experience" class="btn-primary">Experience</a>
-            <a href="#projects" class="btn-secondary">Projects</a>
-            <a href="#contact" class="btn-secondary">Let's connect</a>
+            <a href="#projects" class="btn-primary">View Work</a>
+            <a href="#experience" class="btn-secondary">Experience</a>
+            <a href="#contact" class="btn-secondary">Contact</a>
           </div>
 
-          <div class="hero-stats">
-            <div>
-              <div class="hero-stat-num">3+</div>
-              <div class="hero-stat-label">Years building real systems</div>
+          <div class="hero-meta">
+            <div class="meta-pill">Tesla</div>
+            <div class="meta-pill">Columbia MS</div>
+            <div class="meta-pill">Robotics + Manufacturing Systems</div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="orb"></div>
+          <div class="robot-card">
+            <div class="robot-head">
+              <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+              </div>
             </div>
-            <div>
-              <div class="hero-stat-num">10+</div>
-              <div class="hero-stat-label">Engineering projects across robotics, controls, and hardware</div>
-            </div>
-            <div>
-              <div class="hero-stat-num">1</div>
-              <div class="hero-stat-label">Mission: build high-leverage machines</div>
+            <div class="robot-lines">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
             </div>
           </div>
         </div>
-
-        <div class="hero-photo-placeholder">
-          <img src="Columbia-SJ-Professional-Photo.JPG" alt="Ishani Prabhudesai" />
-        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="about">
-  <div class="container">
-    <div class="about-grid fade-in">
-      <div class="about-text">
-        <p class="section-label">About me</p>
-        <h2 class="section-title">I build machines that do things in the real world.</h2>
+  <section id="about">
+    <div class="container fade-in">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Lean, technical, and ambitious.</h2>
 
-        <p>
-          I’m a robotics engineer and systems thinker focused on the point where
-          <strong>software meets hardware at scale</strong>.
-          I care about systems that don’t just analyze reality, but interact with it:
-          machines that sense, decide, and act.
-        </p>
-
-        <p>
-          My work spans <strong>robotics, controls, manufacturing systems, and automation</strong>.
-          I like solving problems where the output is not just a model or a report,
-          but a better system: cleaner logic, better feedback, fewer failures, tighter control,
-          and more intelligent behavior.
-        </p>
-
-        <p>
-          I think in first principles:
-          what is the system optimizing for,
-          where is the bottleneck,
-          and what happens if we remove it?
-          That’s the lens I bring to factory lines, robotic platforms, and infrastructure that touches reality.
-        </p>
-
-        <p>
-          Long term, I want to build <strong>high-leverage robotic systems</strong>—
-          machines that extend human capability, reduce friction, and make the physical world more intelligent.
-        </p>
-      </div>
-
-      <div class="about-highlights">
-        <div class="highlight-card">
-          <div class="highlight-num">01</div>
-          <div class="highlight-desc">Closing the loop between perception, decision, and action</div>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-num">02</div>
-          <div class="highlight-desc">Building automation that improves reliability at scale</div>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-num">03</div>
-          <div class="highlight-desc">Designing systems that reduce human friction, not just report it</div>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-num">04</div>
-          <div class="highlight-desc">Using first-principles engineering to turn bottlenecks into leverage</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="container fade-in">
-    <p class="section-label">Where I've worked</p>
-    <h2 class="section-title">Experience</h2>
-
-    <div class="exp-list">
-      <div class="exp-item">
-        <div class="exp-date">2026 – Present</div>
-        <div>
-          <div class="exp-role">Associate Equipment Engineer</div>
-          <div class="exp-company">Tesla — Nevada, US</div>
-          <div class="exp-desc">
-            <ul>
-              <li>Work on high-throughput electro-mechanical manufacturing systems, improving equipment reliability, operator interaction, and line performance.</li>
-              <li>Own troubleshooting and systems-level improvement efforts across controls, process logic, machine behavior, and production bottlenecks.</li>
-              <li>Operate at the intersection of hardware, automation, manufacturing, and decision-making under real production constraints.</li>
-            </ul>
-          </div>
-          <span class="tag">Manufacturing Systems</span><span class="tag">Equipment Engineering</span><span class="tag">Controls</span><span class="tag">Root Cause Analysis</span>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-date">Summer 2025</div>
-        <div>
-          <div class="exp-role">Drive Unit Equipment Engineering Intern</div>
-          <div class="exp-company">Tesla — Gigafactory Nevada</div>
-          <div class="exp-desc">
-            <ul>
-              <li>Built external control-layer improvements for production equipment to reduce scrap, improve visibility, and tighten operator accountability.</li>
-              <li>Worked across PLC logic, machine signals, line-side integration, and system reliability to improve process robustness in stator manufacturing.</li>
-              <li>Designed practical engineering solutions that connected sensors, controls, machine behavior, and production outcomes.</li>
-            </ul>
-          </div>
-          <span class="tag">PLC Logic</span><span class="tag">Ignition SCADA</span><span class="tag">Sensors</span><span class="tag">Production Systems</span>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-date">2024 – 2025</div>
-        <div>
-          <div class="exp-role">Course Assistant — Thermodynamics</div>
-          <div class="exp-company">Columbia University — New York, US</div>
-          <div class="exp-desc">
-            <ul>
-              <li>Supported engineering instruction by helping students understand system behavior, energy transfer, and analytical problem solving.</li>
-              <li>Strengthened my ability to break down technical complexity into intuitive, decision-ready explanations.</li>
-            </ul>
-          </div>
-          <span class="tag">Teaching</span><span class="tag">Thermodynamics</span><span class="tag">Systems Thinking</span>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-date">2023</div>
-        <div>
-          <div class="exp-role">Engineering Intern</div>
-          <div class="exp-company">Mahindra & Mahindra Automotive Division — India</div>
-          <div class="exp-desc">
-            <ul>
-              <li>Developed a functional safety stock database and introduced a practical Kanban three-bin system for assembly-line hardware control.</li>
-              <li>Learned to connect process design, plant operations, and engineering execution in real manufacturing environments.</li>
-            </ul>
-          </div>
-          <span class="tag">Industrial Engineering</span><span class="tag">Kanban</span><span class="tag">Operations</span><span class="tag">Manufacturing</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="container fade-in">
-    <p class="section-label">What I work with</p>
-    <h2 class="section-title">Skills</h2>
-
-    <div class="skills-grid">
-      <div>
-        <p class="skill-group-label">Programming & Technical Tools</p>
-        <div class="skill-pills">
-          <span class="skill-pill">Python</span>
-          <span class="skill-pill">C++</span>
-          <span class="skill-pill">MATLAB</span>
-          <span class="skill-pill">SQL</span>
-          <span class="skill-pill">ROS / ROS2</span>
-        </div>
-      </div>
-
-      <div>
-        <p class="skill-group-label">Controls, Automation & Manufacturing</p>
-        <div class="skill-pills">
-          <span class="skill-pill">PLC Logic</span>
-          <span class="skill-pill">Ignition SCADA</span>
-          <span class="skill-pill">Process Improvement</span>
-          <span class="skill-pill">Root Cause Analysis</span>
-          <span class="skill-pill">Control Systems</span>
-          <span class="skill-pill">Equipment Engineering</span>
-        </div>
-      </div>
-
-      <div>
-        <p class="skill-group-label">Robotics & Systems</p>
-        <div class="skill-pills">
-          <span class="skill-pill">Kinematics</span>
-          <span class="skill-pill">Inverse Kinematics</span>
-          <span class="skill-pill">Model Predictive Control</span>
-          <span class="skill-pill">Robot Dynamics</span>
-          <span class="skill-pill">Simulation</span>
-          <span class="skill-pill">Embedded Systems</span>
-        </div>
-      </div>
-
-      <div>
-        <p class="skill-group-label">Design & Hardware</p>
-        <div class="skill-pills">
-          <span class="skill-pill">Fusion 360</span>
-          <span class="skill-pill">SolidWorks</span>
-          <span class="skill-pill">Arduino</span>
-          <span class="skill-pill">Raspberry Pi</span>
-          <span class="skill-pill">Sensors</span>
-          <span class="skill-pill">Electro-Mechanical Prototyping</span>
-        </div>
-      </div>
-
-      <div>
-        <p class="skill-group-label">How I Think</p>
-        <div class="skill-pills">
-          <span class="skill-pill">First-Principles Thinking</span>
-          <span class="skill-pill">Systems Thinking</span>
-          <span class="skill-pill">Rapid Learning</span>
-          <span class="skill-pill">Technical Communication</span>
-          <span class="skill-pill">Cross-Functional Execution</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="container fade-in">
-    <p class="section-label">What I've built</p>
-    <h2 class="section-title">Projects</h2>
-
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-icon">🤖</div>
-        <div class="project-cat">Robotics · Controls</div>
-        <div class="project-title">Model Predictive Control for Robotic Arm</div>
-        <p class="project-desc">
-          Built and tuned a Model Predictive Controller for a simulated robotic arm, optimizing motion under dynamic constraints.
-          Focused on control performance, stability, data collection, and learned dynamics integration.
-        </p>
-        <div class="project-footer">
-          <span class="tag">MPC</span><span class="tag">Python</span><span class="tag">Robot Dynamics</span><span class="tag">Control</span>
-          <a href="#" class="project-arrow" title="Add project link here">→</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">🦾</div>
-        <div class="project-cat">Robot Learning · Reinforcement Learning</div>
-        <div class="project-title">Deep RL for 2-Link Robotic Arm</div>
-        <p class="project-desc">
-          Implemented Deep Q-Network and reinforcement learning methods for a robotic arm reaching task,
-          exploring how agents learn actuation policies under discrete torque constraints and task-based rewards.
-        </p>
-        <div class="project-footer">
-          <span class="tag">DQN</span><span class="tag">PPO</span><span class="tag">Python</span><span class="tag">Robotics</span>
-          <a href="#" class="project-arrow" title="Add project link here">→</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">👁️</div>
-        <div class="project-cat">Computer Vision · Biomedical Systems</div>
-        <div class="project-title">Vision-Based Vital Sign Extraction System</div>
-        <p class="project-desc">
-          Designed a biomedical robot pipeline that reads vital signs from non-connected medical devices using OCR,
-          confidence checks, and feedback logic—turning passive displays into actionable, machine-readable data.
-        </p>
-        <div class="project-footer">
-          <span class="tag">OpenCV</span><span class="tag">OCR</span><span class="tag">Python</span><span class="tag">Sensing</span>
-          <a href="#" class="project-arrow" title="Add project link here">→</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">🛠️</div>
-        <div class="project-cat">Manufacturing · Automation</div>
-        <div class="project-title">ECM Drilling Machine</div>
-        <p class="project-desc">
-          Built controls and safety architecture for a benchtop electrochemical machining system using Raspberry Pi,
-          motor control, current sensing, pump logic, and interlock-driven hardware behavior.
-        </p>
-        <div class="project-footer">
-          <span class="tag">Raspberry Pi</span><span class="tag">Embedded Control</span><span class="tag">Safety Logic</span><span class="tag">Mechatronics</span>
-          <a href="#" class="project-arrow" title="Add project link here">→</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">🐕</div>
-        <div class="project-cat">Robotics · Personal Build</div>
-        <div class="project-title">Service Robot Dog Concept</div>
-        <p class="project-desc">
-          Exploring a hands-on robotic dog platform combining mobility, sensing, and assistive behavior—
-          with the long-term goal of building machines that can genuinely support people in everyday environments.
-        </p>
-        <div class="project-footer">
-          <span class="tag">Quadrupeds</span><span class="tag">Sensors</span><span class="tag">Embedded Systems</span><span class="tag">Robotics</span>
-          <a href="#" class="project-arrow" title="Add project link here">→</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">♻️</div>
-        <div class="project-cat">Robotics · Impact Design</div>
-        <div class="project-title">Nitya — Autonomous Waste Collection Boat</div>
-        <p class="project-desc">
-          Led design and prototyping of a floating waste-collection system using locally sourced materials,
-          integrating CAD, manufacturing, smartphone-based navigation, and autonomous behavior concepts.
-        </p>
-        <div class="project-footer">
-          <span class="tag">CAD</span><span class="tag">Arduino</span><span class="tag">Autonomy</span><span class="tag">Sustainable Design</span>
-          <a href="#" class="project-arrow" title="Add project link here">→</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="education">
-  <div class="container fade-in">
-    <p class="section-label">Academic background</p>
-    <h2 class="section-title">Education</h2>
-
-    <div class="exp-list">
-      <div class="edu-item">
-        <div class="edu-year">2024 – 2025</div>
-        <div>
-          <div class="edu-degree">Master of Science in Mechanical Engineering</div>
-          <div class="edu-school">Columbia University — New York, US</div>
-          <div class="edu-detail">
-            Focused on robotics, controls, manufacturing systems, dynamics, and intelligent machines.
-            Coursework and projects included robot kinematics, inverse kinematics, forward dynamics,
-            model predictive control, reinforcement learning, sensing, and electro-mechanical system design.
-          </div>
-        </div>
-      </div>
-
-      <div class="edu-item">
-        <div class="edu-year">2019 – 2023</div>
-        <div>
-          <div class="edu-degree">Bachelor’s in Mechanical Engineering</div>
-          <div class="edu-school">Sardar Patel College of Engineering — Mumbai, India</div>
-          <div class="edu-detail">
-            Built a strong foundation in thermodynamics, manufacturing, mechanical design, and applied engineering.
-            Developed early interests in additive manufacturing, mechatronics, and hardware systems.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="publications">
-  <div class="container fade-in">
-    <p class="section-label">Research</p>
-    <h2 class="section-title">Publications</h2>
-
-    <div class="pub-card">
-      <div class="pub-badge">Research</div>
-      <div class="pub-body">
-        <div class="pub-title">Selected Technical Writing & Research Work</div>
-        <div class="pub-meta">Engineering, systems, and applied problem-solving</div>
-        <p class="pub-desc">
-          My research and technical work reflects a consistent theme: using engineering to make complex systems more understandable,
-          measurable, and useful. Across projects, I’m drawn to building things that connect analysis with action.
-        </p>
-        <a href="#" class="pub-link">Add publication link →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="blogs">
-  <div class="container fade-in">
-    <p class="section-label">Writing</p>
-    <h2 class="section-title">Notes from the build</h2>
-
-    <div class="blogs-grid">
-      <a href="#" class="blog-card">
-        <span class="blog-tag">Robotics</span>
-        <div class="blog-title">What factory systems taught me about real-world robotics</div>
-        <p class="blog-excerpt">
-          The real world is noisy, delayed, imperfect, and physical. That’s exactly why it’s interesting.
-        </p>
-        <div class="blog-meta">Add date</div>
-      </a>
-
-      <a href="#" class="blog-card">
-        <span class="blog-tag">Systems</span>
-        <div class="blog-title">Software is leverage. Hardware is reality.</div>
-        <p class="blog-excerpt">
-          Why the future belongs to engineers who can think across code, controls, machines, and decisions.
-        </p>
-        <div class="blog-meta">Add date</div>
-      </a>
-    </div>
-
-    <a href="#" class="blog-substack-btn">Add your Substack or blog link →</a>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container fade-in">
-    <p class="section-label">Get in touch</p>
-    <h2 class="section-title">Let's build something real.</h2>
-
-    <div class="contact-grid">
-      <div>
-        <div class="contact-text">
+      <div class="grid-2">
+        <div class="card about-copy">
           <p>
-            I’m interested in robotics, controls, automation, intelligent machines, and ambitious engineering problems.
-            If you’re working on systems that touch the real world, I’d love to connect.
+            I’m a robotics engineer working at the intersection of controls, automation, and physical systems.
+            I like building machines and infrastructure that make real-world systems more intelligent, reliable, and scalable.
+          </p>
+          <p>
+            My background spans robotics, manufacturing, embedded systems, and line-side engineering — with a bias toward learning fast and building what actually works.
           </p>
         </div>
 
-        <div class="contact-links">
-          <a href="https://www.linkedin.com/in/ishaniprabhudesai/" class="contact-link" target="_blank">
-            <span class="contact-icon">in</span> LinkedIn — Ishani Prabhudesai
-          </a>
-
-          <a href="https://github.com/pro-ish" class="contact-link" target="_blank">
-            <span class="contact-icon">⌥</span> GitHub — pro-ish
-          </a>
+        <div class="mini-list">
+          <div class="mini-item">
+            <strong>What I build</strong>
+            <span>Robotic systems, control logic, automation, and hardware-heavy engineering tools.</span>
+          </div>
+          <div class="mini-item">
+            <strong>What I care about</strong>
+            <span>Autonomy, manufacturing systems, intelligent machines, and physical AI.</span>
+          </div>
+          <div class="mini-item">
+            <strong>How I work</strong>
+            <span>First-principles thinking, fast execution, and strong system intuition.</span>
+          </div>
         </div>
       </div>
 
-      <div>
-        <div class="contact-form">
-          <input type="text" placeholder="Your name" />
-          <input type="email" placeholder="Your email" />
-          <textarea placeholder="Your message"></textarea>
-          <button type="button">Send message</button>
+      <div class="personality-box">
+        <h3>Outside of engineering</h3>
+        <p>
+          I’m into drawing, storytelling, and ambitious side projects. I care about technical depth, thoughtful design,
+          and building things that feel alive in the real world.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container fade-in">
+      <div class="section-label">Experience</div>
+      <h2 class="section-title">Proof over buzzwords.</h2>
+      <p class="section-copy">
+        I’ve worked on real machines, real constraints, and real production systems — not just slides.
+      </p>
+
+      <div class="experience-list">
+        <div class="exp-item">
+          <div class="exp-date">2026 — Present</div>
+          <div>
+            <div class="exp-role">Associate Equipment Engineer</div>
+            <div class="exp-company">Tesla · Nevada</div>
+            <div class="exp-copy">
+              Working on high-throughput manufacturing systems, controls, and equipment reliability in a real production environment.
+            </div>
+            <div class="tags">
+              <span class="tag">Equipment Engineering</span>
+              <span class="tag">Controls</span>
+              <span class="tag">Manufacturing Systems</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-date">Summer 2025</div>
+          <div>
+            <div class="exp-role">Drive Unit Equipment Engineering Intern</div>
+            <div class="exp-company">Tesla · Gigafactory Nevada</div>
+            <div class="exp-copy">
+              Built practical control-layer and automation improvements for production equipment, connecting machine signals, logic, and operator behavior to system performance.
+            </div>
+            <div class="tags">
+              <span class="tag">PLC Logic</span>
+              <span class="tag">Ignition SCADA</span>
+              <span class="tag">Sensors</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-date">2024 — 2025</div>
+          <div>
+            <div class="exp-role">Course Assistant</div>
+            <div class="exp-company">Columbia University</div>
+            <div class="exp-copy">
+              Supported thermodynamics instruction and helped break down technical concepts into clear system-level understanding.
+            </div>
+            <div class="tags">
+              <span class="tag">Thermodynamics</span>
+              <span class="tag">Teaching</span>
+              <span class="tag">Systems Thinking</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-date">2023</div>
+          <div>
+            <div class="exp-role">Engineering Intern</div>
+            <div class="exp-company">Mahindra & Mahindra Automotive Division</div>
+            <div class="exp-copy">
+              Worked on assembly-line process improvement, safety stock systems, and practical manufacturing operations.
+            </div>
+            <div class="tags">
+              <span class="tag">Industrial Engineering</span>
+              <span class="tag">Kanban</span>
+              <span class="tag">Operations</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <p>© 2026 Ishani Prabhudesai · All rights reserved</p>
-</footer>
+  <section id="skills">
+    <div class="container fade-in">
+      <div class="section-label">Skills</div>
+      <h2 class="section-title">The stack.</h2>
 
-<script>
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add('visible');
-    });
-  }, { threshold: 0.08 });
+      <div class="skills-wrap">
+        <div class="skill-group">
+          <h3>Programming</h3>
+          <div class="pill-wrap">
+            <span class="pill">Python</span>
+            <span class="pill">C++</span>
+            <span class="pill">MATLAB</span>
+            <span class="pill">SQL</span>
+            <span class="pill">ROS / ROS2</span>
+          </div>
+        </div>
 
-  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+        <div class="skill-group">
+          <h3>Controls + Automation</h3>
+          <div class="pill-wrap">
+            <span class="pill">PLC Logic</span>
+            <span class="pill">Ignition SCADA</span>
+            <span class="pill">Control Systems</span>
+            <span class="pill">Root Cause Analysis</span>
+            <span class="pill">Equipment Reliability</span>
+          </div>
+        </div>
 
-  const titles = [
-    'Robotics Systems Engineer',
-    'Controls + Automation Engineer',
-    'Builder of Intelligent Machines'
-  ];
+        <div class="skill-group">
+          <h3>Robotics + Hardware</h3>
+          <div class="pill-wrap">
+            <span class="pill">Kinematics</span>
+            <span class="pill">Robot Dynamics</span>
+            <span class="pill">MPC</span>
+            <span class="pill">Embedded Systems</span>
+            <span class="pill">Arduino</span>
+            <span class="pill">Raspberry Pi</span>
+            <span class="pill">Fusion 360</span>
+            <span class="pill">SolidWorks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  const el = document.querySelector('.rotating-title');
-  let i = 0;
+  <section id="projects">
+    <div class="container fade-in">
+      <div class="section-label">Selected Projects</div>
+      <h2 class="section-title">Built, not imagined.</h2>
+      <p class="section-copy">
+        Keep this to your strongest four. Add real links later.
+      </p>
 
-  setInterval(() => {
-    el.style.opacity = '0';
-    el.style.transition = 'opacity 0.4s';
-    setTimeout(() => {
-      i = (i + 1) % titles.length;
-      el.textContent = titles[i];
-      el.style.opacity = '1';
-    }, 400);
-  }, 3000);
-</script>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon">⚙</div>
+            <a href="#" class="project-link">Link ↗</a>
+          </div>
+          <div class="project-title">Model Predictive Control for Robotic Arm</div>
+          <div class="project-copy">
+            Built and tuned an MPC controller for a robotic arm under dynamic constraints, focusing on stability, control performance, and learned system behavior.
+          </div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">MPC</span>
+            <span class="tag">Robot Dynamics</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon">◉</div>
+            <a href="#" class="project-link">Link ↗</a>
+          </div>
+          <div class="project-title">Vision-Based Vital Sign Extraction</div>
+          <div class="project-copy">
+            Built a computer vision pipeline that reads vital signs from medical devices using OCR, confidence checks, and control logic.
+          </div>
+          <div class="tags">
+            <span class="tag">OpenCV</span>
+            <span class="tag">OCR</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon">▣</div>
+            <a href="#" class="project-link">Link ↗</a>
+          </div>
+          <div class="project-title">ECM Drilling Machine</div>
+          <div class="project-copy">
+            Designed controls and safety logic for a benchtop electrochemical machining system using Raspberry Pi, sensing, motion, and interlocks.
+          </div>
+          <div class="tags">
+            <span class="tag">Embedded Control</span>
+            <span class="tag">Safety Logic</span>
+            <span class="tag">Mechatronics</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-icon">△</div>
+            <a href="#" class="project-link">Link ↗</a>
+          </div>
+          <div class="project-title">Service Robot Dog Concept</div>
+          <div class="project-copy">
+            Exploring a quadruped-style robotics platform combining sensing, mobility, and assistive behavior.
+          </div>
+          <div class="tags">
+            <span class="tag">Robotics</span>
+            <span class="tag">Sensors</span>
+            <span class="tag">Mobility</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container fade-in">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let’s build something real.</h2>
+
+      <div class="contact-box">
+        <p>
+          I’m interested in robotics, controls, autonomy, and intelligent hardware.
+          Reach out for engineering roles, collaborations, or ambitious projects.
+        </p>
+
+        <div class="contact-links">
+          <a class="contact-link" href="https://www.linkedin.com/in/ishaniprabhudesai/" target="_blank">LinkedIn</a>
+          <a class="contact-link" href="https://github.com/pro-ish" target="_blank">GitHub</a>
+          <a class="contact-link" href="mailto:ishani13715@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Ishani Prabhudesai · Robotics Systems Engineer
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+    const titles = [
+      'Robotics Systems Engineer',
+      'Controls & Automation Engineer',
+      'Builder of Intelligent Machines'
+    ];
+
+    const rotatingTitle = document.querySelector('.rotating-title');
+    let i = 0;
+
+    setInterval(() => {
+      rotatingTitle.style.opacity = '0';
+      rotatingTitle.style.transition = 'opacity 0.25s ease';
+      setTimeout(() => {
+        i = (i + 1) % titles.length;
+        rotatingTitle.textContent = titles[i];
+        rotatingTitle.style.opacity = '1';
+      }, 250);
+    }, 2600);
+  </script>
 
 </body>
 </html>
