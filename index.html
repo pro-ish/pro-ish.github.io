@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ishani Prabhudesai — Robot Generalist</title>
+<title>Ishani Prabhudesai — Robotics Systems Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
@@ -21,10 +21,17 @@
     --tag-bg: #f0f0ec;
     --tag-text: #3a3a35;
     --nav-h: 64px;
-    --max: 880px;
+    --max: 920px;
   }
+
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.7; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
 
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -34,123 +41,724 @@
     border-bottom: 1px solid var(--border);
     display: flex; align-items: center;
   }
-  .nav-inner { max-width: var(--max); margin: 0 auto; width: 100%; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
-  .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--text); text-decoration: none; }
-  .nav-links { display: flex; gap: 1.75rem; list-style: none; }
-  .nav-links a { font-size: 0.8rem; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+
+  .nav-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
   .nav-links a:hover { color: var(--accent); }
-  .nav-cta { font-size: 0.82rem; font-weight: 500; background: var(--accent); color: #fff; padding: 8px 18px; border-radius: 100px; text-decoration: none; transition: background 0.2s; }
+
+  .nav-cta {
+    font-size: 0.82rem;
+    font-weight: 500;
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
   .nav-cta:hover { background: var(--accent-mid); }
 
   section { padding: 5rem 2rem; }
   .container { max-width: var(--max); margin: 0 auto; }
-  .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
-  h2.section-title { font-family: 'DM Serif Display', serif; font-size: 2rem; font-weight: 400; line-height: 1.2; color: var(--text); margin-bottom: 2.5rem; }
 
-  #hero { min-height: 100vh; display: flex; flex-direction: column; padding-top: var(--nav-h); padding-bottom: 0; padding-left: 0; padding-right: 0; }
-  .hero-banner-full { width: 100%; height: 160px; overflow: hidden; flex-shrink: 0; }
-  .hero-banner-full img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
-  .hero-content { flex: 1; display: flex; align-items: center; padding: 3rem 2rem 4rem; }
-  .hero-grid { display: grid; grid-template-columns: 1fr 260px; gap: 4rem; align-items: start; }
-  .hero-eyebrow { font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
-  .hero-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--accent); }
-  h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 5vw, 3.3rem); font-weight: 400; line-height: 1.1; color: var(--text); margin-bottom: 1.2rem; }
-  h1 em { font-style: italic; color: var(--accent-mid); }
-  .hero-sub { font-size: 1rem; color: var(--muted); max-width: 500px; margin-bottom: 2rem; line-height: 1.7; }
-  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary { background: var(--accent); color: #fff; padding: 11px 24px; border-radius: 100px; text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: background 0.2s; }
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  h2.section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 2.2rem;
+  }
+
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--nav-h);
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-banner-full {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .hero-banner-full img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+
+  .hero-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 3rem 2rem 4rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.06;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .hero-title-sub {
+    font-size: 1.12rem;
+    font-weight: 400;
+    color: var(--accent-mid);
+    margin-top: 0.2rem;
+    margin-bottom: 1.2rem;
+    min-height: 1.6rem;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 560px;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+
+  .hero-sub strong { color: var(--text); }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    padding: 11px 24px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+
   .btn-primary:hover { background: var(--accent-mid); }
-  .btn-secondary { border: 1px solid var(--border); background: var(--surface); color: var(--text); padding: 11px 24px; border-radius: 100px; text-decoration: none; font-size: 0.88rem; transition: border-color 0.2s, color 0.2s; }
-  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-  .hero-photo-placeholder { width: 260px; height: 360px; border-radius: 14px; background: var(--accent-light); border: 3px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: 'DM Serif Display', serif; font-size: 2.6rem; color: var(--accent); flex-shrink: 0; overflow: hidden; }
-  .hero-photo-placeholder img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 0; }
-  .hero-title-sub { font-size: 1.15rem; font-weight: 400; color: var(--accent-mid); margin-top: 0.35rem; margin-bottom: 1.2rem; min-height: 1.6rem; font-family: 'DM Sans', sans-serif; }
-  .hero-title-sub .rotating-title { display: inline-block; }
-  .hero-stats { display: flex; gap: 2.5rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
-  .hero-stat-num { font-family: 'DM Serif Display', serif; font-size: 1.7rem; color: var(--text); }
-  .hero-stat-label { font-size: 0.79rem; color: var(--muted); }
 
-  #about { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-  .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 0.95rem; }
-  .about-highlights { display: flex; flex-direction: column; gap: 1rem; }
-  .highlight-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; }
-  .highlight-num { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--accent); line-height: 1; margin-bottom: 0.25rem; }
-  .highlight-desc { font-size: 0.84rem; color: var(--muted); }
+  .btn-secondary {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    padding: 11px 24px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .hero-photo-placeholder {
+    width: 260px;
+    height: 360px;
+    border-radius: 14px;
+    background: var(--accent-light);
+    border: 3px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+
+  .hero-stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.7rem;
+    color: var(--text);
+  }
+
+  .hero-stat-label {
+    font-size: 0.79rem;
+    color: var(--muted);
+    max-width: 160px;
+  }
+
+  #about {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .about-text strong { color: var(--text); }
+
+  .about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .highlight-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .highlight-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+
+  .highlight-desc {
+    font-size: 0.84rem;
+    color: var(--muted);
+  }
 
   .exp-list { display: flex; flex-direction: column; }
-  .exp-item { display: grid; grid-template-columns: 155px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
-  .exp-item:first-child { border-top: 1px solid var(--border); }
-  .edu-item { display: grid; grid-template-columns: 155px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
-  .edu-item:first-child { border-top: 1px solid var(--border); }
-  .exp-date, .edu-year { font-size: 0.8rem; color: var(--muted); padding-top: 0.2rem; line-height: 1.5; }
-  .exp-role { font-size: 0.98rem; font-weight: 500; color: var(--text); margin-bottom: 0.15rem; }
-  .exp-company, .edu-school { font-size: 0.88rem; color: var(--accent-mid); margin-bottom: 0.6rem; }
-  .exp-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
-  .exp-desc ul { padding-left: 1.2rem; margin-top: 0.4rem; }
-  .exp-desc li { margin-bottom: 0.35rem; }
-  .edu-degree { font-size: 0.98rem; font-weight: 500; margin-bottom: 0.15rem; }
-  .edu-detail { font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
-  .tag { display: inline-block; background: var(--tag-bg); color: var(--tag-text); font-size: 0.71rem; padding: 3px 10px; border-radius: 100px; margin: 0.5rem 0.25rem 0 0; }
 
-  #skills { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .skills-grid { display: flex; flex-direction: column; gap: 2rem; }
-  .skill-group-label { font-size: 0.76rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.7rem; }
-  .skill-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
-  .skill-pill { background: var(--bg); border: 1px solid var(--border); color: var(--text); font-size: 0.84rem; padding: 6px 14px; border-radius: 100px; transition: border-color 0.2s, color 0.2s; }
-  .skill-pill:hover { border-color: var(--accent); color: var(--accent); }
+  .exp-item, .edu-item {
+    display: grid;
+    grid-template-columns: 155px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+  }
 
-  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-  .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
-  .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .project-icon { width: 36px; height: 36px; background: var(--accent-light); border-radius: 9px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 17px; }
-  .project-cat { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.35rem; }
-  .project-title { font-size: 0.98rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--text); }
-  .project-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.62; flex: 1; }
-  .project-footer { margin-top: 1.25rem; display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; }
-  .project-arrow { margin-left: auto; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border); color: var(--muted); text-decoration: none; font-size: 1rem; flex-shrink: 0; transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s; }
-  .project-arrow:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateX(2px); }
+  .exp-item:first-child, .edu-item:first-child {
+    border-top: 1px solid var(--border);
+  }
 
-  .pub-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem 2rem; display: flex; gap: 1.5rem; align-items: flex-start; transition: border-color 0.2s, transform 0.2s; }
-  .pub-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-  .pub-badge { flex-shrink: 0; background: var(--accent-light); color: var(--accent); font-size: 0.7rem; font-weight: 500; padding: 6px 12px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.2rem; }
+  .exp-date, .edu-year {
+    font-size: 0.8rem;
+    color: var(--muted);
+    padding-top: 0.2rem;
+    line-height: 1.5;
+  }
+
+  .exp-role, .edu-degree {
+    font-size: 0.98rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.15rem;
+  }
+
+  .exp-company, .edu-school {
+    font-size: 0.88rem;
+    color: var(--accent-mid);
+    margin-bottom: 0.6rem;
+  }
+
+  .exp-desc, .edu-detail {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .exp-desc ul {
+    padding-left: 1.2rem;
+    margin-top: 0.4rem;
+  }
+
+  .exp-desc li { margin-bottom: 0.4rem; }
+
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: 0.71rem;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin: 0.5rem 0.25rem 0 0;
+  }
+
+  #skills {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .skill-group-label {
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.7rem;
+  }
+
+  .skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .skill-pill {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 0.84rem;
+    padding: 6px 14px;
+    border-radius: 100px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .skill-pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+    transition: border-color 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .project-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--accent-light);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 17px;
+  }
+
+  .project-cat {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.35rem;
+  }
+
+  .project-title {
+    font-size: 0.98rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.62;
+    flex: 1;
+  }
+
+  .project-footer {
+    margin-top: 1.25rem;
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .project-arrow {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+
+  .project-arrow:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    transform: translateX(2px);
+  }
+
+  .pub-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .pub-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .pub-badge {
+    flex-shrink: 0;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 0.2rem;
+  }
+
   .pub-body { flex: 1; }
-  .pub-title { font-size: 1rem; font-weight: 500; color: var(--text); margin-bottom: 0.4rem; line-height: 1.45; }
-  .pub-meta { font-size: 0.82rem; color: var(--accent-mid); margin-bottom: 0.5rem; }
-  .pub-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.62; margin-bottom: 1rem; }
-  .pub-link { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; font-weight: 500; color: var(--accent); text-decoration: none; border: 1px solid var(--accent); padding: 5px 14px; border-radius: 100px; transition: background 0.2s, color 0.2s; }
-  .pub-link:hover { background: var(--accent); color: #fff; }
 
-  .blogs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-  .blog-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; transition: border-color 0.2s; display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+  .pub-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+    line-height: 1.45;
+  }
+
+  .pub-meta {
+    font-size: 0.82rem;
+    color: var(--accent-mid);
+    margin-bottom: 0.5rem;
+  }
+
+  .pub-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.62;
+    margin-bottom: 1rem;
+  }
+
+  .pub-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    padding: 5px 14px;
+    border-radius: 100px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .pub-link:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .blogs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .blog-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+    transition: border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+
   .blog-card:hover { border-color: var(--accent); }
-  .blog-tag { display: inline-block; background: var(--accent-light); color: var(--accent); font-size: 0.71rem; padding: 3px 10px; border-radius: 100px; margin-bottom: 0.85rem; font-weight: 500; }
-  .blog-title { font-size: 0.97rem; font-weight: 500; margin-bottom: 0.45rem; line-height: 1.4; color: var(--text); }
-  .blog-excerpt { font-size: 0.84rem; color: var(--muted); line-height: 1.62; flex: 1; }
-  .blog-meta { font-size: 0.77rem; color: var(--muted); margin-top: 1rem; }
-  .blog-card-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
-  .blog-loading { color: var(--muted); font-size: 0.9rem; padding: 2rem 0; }
-  .blog-substack-btn { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 2rem; font-size: 0.85rem; font-weight: 500; color: var(--accent); border: 1px solid var(--accent); padding: 8px 20px; border-radius: 100px; text-decoration: none; transition: background 0.2s, color 0.2s; }
-  .blog-substack-btn:hover { background: var(--accent); color: #fff; }
 
-  #contact { background: var(--surface); border-top: 1px solid var(--border); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-  .contact-text p { color: var(--muted); font-size: 0.95rem; }
-  .contact-links { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
-  .contact-link { display: flex; align-items: center; gap: 0.75rem; font-size: 0.88rem; color: var(--text); text-decoration: none; padding: 0.75rem 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; transition: border-color 0.2s, color 0.2s; }
-  .contact-link:hover { border-color: var(--accent); color: var(--accent); }
-  .contact-icon { font-size: 0.95rem; width: 20px; text-align: center; flex-shrink: 0; }
-  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-  .contact-form input, .contact-form textarea { width: 100%; padding: 12px 16px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; color: var(--text); outline: none; transition: border-color 0.2s; resize: vertical; }
-  .contact-form input:focus, .contact-form textarea:focus { border-color: var(--accent); }
+  .blog-tag {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.71rem;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 0.85rem;
+    font-weight: 500;
+  }
+
+  .blog-title {
+    font-size: 0.97rem;
+    font-weight: 500;
+    margin-bottom: 0.45rem;
+    line-height: 1.4;
+    color: var(--text);
+  }
+
+  .blog-excerpt {
+    font-size: 0.84rem;
+    color: var(--muted);
+    line-height: 1.62;
+    flex: 1;
+  }
+
+  .blog-meta {
+    font-size: 0.77rem;
+    color: var(--muted);
+    margin-top: 1rem;
+  }
+
+  .blog-substack-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 8px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .blog-substack-btn:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  #contact {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-text p {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.88rem;
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .contact-icon {
+    font-size: 0.95rem;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: var(--accent);
+  }
+
   .contact-form textarea { min-height: 120px; }
-  .contact-form button { align-self: flex-start; background: var(--accent); color: #fff; border: none; padding: 12px 28px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: background 0.2s; }
+
+  .contact-form button {
+    align-self: flex-start;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
   .contact-form button:hover { background: var(--accent-mid); }
 
-  footer { padding: 2rem; text-align: center; font-size: 0.79rem; color: var(--muted); border-top: 1px solid var(--border); }
+  footer {
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.79rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
 
-  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
-  .fade-in.visible { opacity: 1; transform: none; }
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: none;
+  }
 
   @media (max-width: 700px) {
     .nav-links { display: none; }
@@ -175,10 +783,10 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#blogs">Blog</a></li>
+      <li><a href="#blogs">Writing</a></li>
       <li><a href="#publications">Publication</a></li>
     </ul>
-    <a href="#contact" class="nav-cta" style="margin-right: 2rem;"> Get in touch </a>
+    <a href="#contact" class="nav-cta" style="margin-right: 2rem;">Get in touch</a>
   </div>
 </nav>
 
@@ -186,37 +794,47 @@
   <div class="hero-banner-full">
     <img src="columbia-banner.JPG" alt="Columbia University" />
   </div>
+
   <div class="hero-content">
-  <div class="container">
-    <div class="hero-grid">
-      <div>
-        <h1>Ishani Prabhudesai</h1>
-        <p class="hero-title-sub"><span class="rotating-title">Business Intelligence Analyst</span></p>
-        <p class="hero-sub">Columbia University MS graduate turning complex, multi-source data into clear, decision-ready insights — through BI dashboards, analytics frameworks, and scalable data pipelines.</p>
-        <div class="hero-btns">
-          <a href="#experience" class="btn-primary">Experience</a>
-          <a href="#projects" class="btn-secondary">Projects</a>
-          <a href="#contact" class="btn-secondary">Let's connect</a>
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <p class="hero-eyebrow">Robotics · Controls · Automation · Intelligent Systems</p>
+          <h1>Ishani Prabhudesai</h1>
+          <p class="hero-title-sub"><span class="rotating-title">Robotics Systems Engineer</span></p>
+          <p class="hero-sub">
+            I build systems that connect <strong>data, decision, and physical action</strong>.
+            My work lives at the intersection of robotics, control systems, automation, and intelligent infrastructure—
+            from electro-mechanical production systems to machines that sense, decide, and act in the real world.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#experience" class="btn-primary">Experience</a>
+            <a href="#projects" class="btn-secondary">Projects</a>
+            <a href="#contact" class="btn-secondary">Let's connect</a>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num">3+</div>
+              <div class="hero-stat-label">Years building real systems</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">10+</div>
+              <div class="hero-stat-label">Engineering projects across robotics, controls, and hardware</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">1</div>
+              <div class="hero-stat-label">Mission: build high-leverage machines</div>
+            </div>
+          </div>
         </div>
-        <div class="hero-stats">
-          <div>
-            <div class="hero-stat-num">3+</div>
-            <div class="hero-stat-label">Years in data</div>
-          </div>
-          <div>
-            <div class="hero-stat-num">10+</div>
-            <div class="hero-stat-label">Dashboards built</div>
-          </div>
-          <div>
-            <div class="hero-stat-num">5+</div>
-            <div class="hero-stat-label">Pipelines & Data Models </div>
-          </div>
+
+        <div class="hero-photo-placeholder">
+          <img src="Columbia-SJ-Professional-Photo.JPG" alt="Ishani Prabhudesai" />
         </div>
       </div>
-      <!-- Replace SJ text with: <img src="your-photo.jpg" alt="Ishani Prabhudesai"> inside the div below -->
-      <div class="hero-photo-placeholder"><img src="Columbia-SJ-Professional-Photo.JPG" alt="Ishani Prabhudesai" /></div>
     </div>
-  </div>
   </div>
 </section>
 
@@ -225,27 +843,52 @@
     <div class="about-grid fade-in">
       <div class="about-text">
         <p class="section-label">About me</p>
-        <h2 class="section-title">Hi, I'm Ishani.</h2>
-        <p>I'm a Columbia University graduate with an MS in Management Science and Engineering (Dec 2025), and a Business & Data Analytics professional with experience building BI dashboards and analytics frameworks for internal decision-making.</p>
-        <p>I focus on turning complex, multi-source data into clear, decision-ready insights, whether that's engineering scalable ETL pipelines, building normalized measurement frameworks, or designing interactive dashboards that reduce manual reporting.</p>
-        <p>I've worked across business operations, consulting, sustainability, and product analytics at companies including Qlik, EY-Parthenon, and the International Rescue Committee.</p>
+        <h2 class="section-title">I build machines that do things in the real world.</h2>
+
+        <p>
+          I’m a robotics engineer and systems thinker focused on the point where
+          <strong>software meets hardware at scale</strong>.
+          I care about systems that don’t just analyze reality, but interact with it:
+          machines that sense, decide, and act.
+        </p>
+
+        <p>
+          My work spans <strong>robotics, controls, manufacturing systems, and automation</strong>.
+          I like solving problems where the output is not just a model or a report,
+          but a better system: cleaner logic, better feedback, fewer failures, tighter control,
+          and more intelligent behavior.
+        </p>
+
+        <p>
+          I think in first principles:
+          what is the system optimizing for,
+          where is the bottleneck,
+          and what happens if we remove it?
+          That’s the lens I bring to factory lines, robotic platforms, and infrastructure that touches reality.
+        </p>
+
+        <p>
+          Long term, I want to build <strong>high-leverage robotic systems</strong>—
+          machines that extend human capability, reduce friction, and make the physical world more intelligent.
+        </p>
       </div>
+
       <div class="about-highlights">
         <div class="highlight-card">
-          <div class="highlight-num">$1.2M+</div>
-          <div class="highlight-desc">Quarterly spend tracked through real-time Qlik dashboards</div>
+          <div class="highlight-num">01</div>
+          <div class="highlight-desc">Closing the loop between perception, decision, and action</div>
         </div>
         <div class="highlight-card">
-          <div class="highlight-num">200+</div>
-          <div class="highlight-desc">Campaigns and assets analyzed using attribution and normalization models</div>
+          <div class="highlight-num">02</div>
+          <div class="highlight-desc">Building automation that improves reliability at scale</div>
         </div>
         <div class="highlight-card">
-          <div class="highlight-num">60%</div>
-          <div class="highlight-desc">Reduction in reporting turnaround time through automated dashboards</div>
+          <div class="highlight-num">03</div>
+          <div class="highlight-desc">Designing systems that reduce human friction, not just report it</div>
         </div>
         <div class="highlight-card">
-          <div class="highlight-num">45%</div>
-          <div class="highlight-desc">Improvement in KPI accuracy through structured data modeling</div>
+          <div class="highlight-num">04</div>
+          <div class="highlight-desc">Using first-principles engineering to turn bottlenecks into leverage</div>
         </div>
       </div>
     </div>
@@ -256,68 +899,69 @@
   <div class="container fade-in">
     <p class="section-label">Where I've worked</p>
     <h2 class="section-title">Experience</h2>
+
     <div class="exp-list">
-
       <div class="exp-item">
-        <div class="exp-date">Jun 2025 – Dec 2025</div>
+        <div class="exp-date">2026 – Present</div>
         <div>
-          <div class="exp-role">Business Operations Analyst, Intern</div>
-          <div class="exp-company">Qlik — New York, US</div>
-          <div class="exp-desc"><ul>
-            <li>Developed & deployed a Qlik Sense budget tracking app delivering real-time visibility into $1.2M+ quarterly spend, improving financial planning accuracy by 30%.</li>
-            <li>Built scalable ETL pipelines normalizing multi-source Salesforce and Snowflake data, enhancing KPI accuracy by 45%.</li>
-            <li>Engineered 365-day normalization and attribution logic to measure ROI across 200+ campaigns and assets.</li>
-            <li>Designed toggle-based dashboards that reduced manual reporting by 60% and improved executive visibility into marketing pipeline performance.</li>
-            <li>Automated data ingestion via Qlik Automations, cutting dashboard refresh effort by 80%.</li>
-          </ul></div>
-          <span class="tag">Qlik Sense</span><span class="tag">Qlik Script</span><span class="tag">Snowflake</span><span class="tag">Salesforce</span><span class="tag">SQL</span>
+          <div class="exp-role">Associate Equipment Engineer</div>
+          <div class="exp-company">Tesla — Nevada, US</div>
+          <div class="exp-desc">
+            <ul>
+              <li>Work on high-throughput electro-mechanical manufacturing systems, improving equipment reliability, operator interaction, and line performance.</li>
+              <li>Own troubleshooting and systems-level improvement efforts across controls, process logic, machine behavior, and production bottlenecks.</li>
+              <li>Operate at the intersection of hardware, automation, manufacturing, and decision-making under real production constraints.</li>
+            </ul>
+          </div>
+          <span class="tag">Manufacturing Systems</span><span class="tag">Equipment Engineering</span><span class="tag">Controls</span><span class="tag">Root Cause Analysis</span>
         </div>
       </div>
 
       <div class="exp-item">
-        <div class="exp-date">Sept 2024 – May 2025</div>
+        <div class="exp-date">Summer 2025</div>
         <div>
-          <div class="exp-role">Graduate Product Consultant</div>
-          <div class="exp-company">EY-Parthenon — New York, US</div>
-          <div class="exp-desc"><ul>
-            <li>Developed interactive Power BI dashboards visualizing procurement spend and supplier KPIs, helping identify inefficiencies and reduce operational costs by 15%.</li>
-            <li>Built automated data models and DAX measures integrating SQL and Excel data, improving accuracy and visualization performance by 35%.</li>
-            <li>Designed a standardized KPI reporting framework for five strategic projects, improving governance across sourcing, pricing, and supply operations.</li>
-            <li>Accelerated stakeholder decision-making turnaround by 25% by translating analytical findings into process roadmaps.</li>
-          </ul></div>
-          <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Excel</span>
+          <div class="exp-role">Drive Unit Equipment Engineering Intern</div>
+          <div class="exp-company">Tesla — Gigafactory Nevada</div>
+          <div class="exp-desc">
+            <ul>
+              <li>Built external control-layer improvements for production equipment to reduce scrap, improve visibility, and tighten operator accountability.</li>
+              <li>Worked across PLC logic, machine signals, line-side integration, and system reliability to improve process robustness in stator manufacturing.</li>
+              <li>Designed practical engineering solutions that connected sensors, controls, machine behavior, and production outcomes.</li>
+            </ul>
+          </div>
+          <span class="tag">PLC Logic</span><span class="tag">Ignition SCADA</span><span class="tag">Sensors</span><span class="tag">Production Systems</span>
         </div>
       </div>
 
       <div class="exp-item">
-        <div class="exp-date">Sept 2024 – May 2025</div>
+        <div class="exp-date">2024 – 2025</div>
         <div>
-          <div class="exp-role">Data Management Analyst</div>
-          <div class="exp-company">International Rescue Committee (IRC) — New York, US</div>
-          <div class="exp-desc"><ul>
-            <li>Integrated sustainability data from Azuga, Egencia, and AMS into Tableau dashboards, reducing manual consolidation by 50% and improving real-time emissions tracking.</li>
-            <li>Enhanced the Humanitarian Carbon Calculator (HCC) by updating emission factors, increasing GHG reporting accuracy by 22% globally.</li>
-            <li>Built automated ETL pipelines and SQL workflows unifying 200+ climate indicators, cutting reporting turnaround by 60%.</li>
-          </ul></div>
-          <span class="tag">Tableau</span><span class="tag">SQL</span><span class="tag">ETL</span><span class="tag">Sustainability Analytics</span>
+          <div class="exp-role">Course Assistant — Thermodynamics</div>
+          <div class="exp-company">Columbia University — New York, US</div>
+          <div class="exp-desc">
+            <ul>
+              <li>Supported engineering instruction by helping students understand system behavior, energy transfer, and analytical problem solving.</li>
+              <li>Strengthened my ability to break down technical complexity into intuitive, decision-ready explanations.</li>
+            </ul>
+          </div>
+          <span class="tag">Teaching</span><span class="tag">Thermodynamics</span><span class="tag">Systems Thinking</span>
         </div>
       </div>
 
       <div class="exp-item">
-        <div class="exp-date">Oct 2023 – Mar 2024</div>
+        <div class="exp-date">2023</div>
         <div>
-          <div class="exp-role">Product Analyst</div>
-          <div class="exp-company">India Infoline Finance Limited — Mumbai, IN</div>
-          <div class="exp-desc"><ul>
-            <li>Resolved 20+ product bugs via API testing in Postman, improving user engagement by 13%.</li>
-            <li>Enhanced the mobile ticketing feature through BRDs and sprint collaboration, driving 18% higher customer satisfaction.</li>
-            <li>Implemented A/B testing and KPI analytics in Power BI and Excel, increasing product engagement from 60% to 70%.</li>
-            <li>Conducted user research and performance diagnostics, boosting retention by 12%.</li>
-          </ul></div>
-          <span class="tag">Power BI</span><span class="tag">A/B Testing</span><span class="tag">Postman</span><span class="tag">Excel</span>
+          <div class="exp-role">Engineering Intern</div>
+          <div class="exp-company">Mahindra & Mahindra Automotive Division — India</div>
+          <div class="exp-desc">
+            <ul>
+              <li>Developed a functional safety stock database and introduced a practical Kanban three-bin system for assembly-line hardware control.</li>
+              <li>Learned to connect process design, plant operations, and engineering execution in real manufacturing environments.</li>
+            </ul>
+          </div>
+          <span class="tag">Industrial Engineering</span><span class="tag">Kanban</span><span class="tag">Operations</span><span class="tag">Manufacturing</span>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -326,41 +970,63 @@
   <div class="container fade-in">
     <p class="section-label">What I work with</p>
     <h2 class="section-title">Skills</h2>
+
     <div class="skills-grid">
       <div>
-        <p class="skill-group-label">Languages</p>
+        <p class="skill-group-label">Programming & Technical Tools</p>
         <div class="skill-pills">
-          <span class="skill-pill">SQL</span><span class="skill-pill">Python</span><span class="skill-pill">R</span><span class="skill-pill">Qlik Scripting</span><span class="skill-pill">DAX</span>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">C++</span>
+          <span class="skill-pill">MATLAB</span>
+          <span class="skill-pill">SQL</span>
+          <span class="skill-pill">ROS / ROS2</span>
         </div>
       </div>
+
       <div>
-        <p class="skill-group-label">BI & Visualization — 3+ years</p>
+        <p class="skill-group-label">Controls, Automation & Manufacturing</p>
         <div class="skill-pills">
-          <span class="skill-pill">Qlik Sense</span><span class="skill-pill">Power BI</span><span class="skill-pill">Tableau</span><span class="skill-pill">Looker</span><span class="skill-pill">Google Data Studio</span><span class="skill-pill">Excel</span>
+          <span class="skill-pill">PLC Logic</span>
+          <span class="skill-pill">Ignition SCADA</span>
+          <span class="skill-pill">Process Improvement</span>
+          <span class="skill-pill">Root Cause Analysis</span>
+          <span class="skill-pill">Control Systems</span>
+          <span class="skill-pill">Equipment Engineering</span>
         </div>
       </div>
+
       <div>
-        <p class="skill-group-label">Data & Cloud Platforms</p>
+        <p class="skill-group-label">Robotics & Systems</p>
         <div class="skill-pills">
-          <span class="skill-pill">Snowflake</span><span class="skill-pill">Salesforce</span><span class="skill-pill">AWS</span><span class="skill-pill">Qlik Automations</span>
+          <span class="skill-pill">Kinematics</span>
+          <span class="skill-pill">Inverse Kinematics</span>
+          <span class="skill-pill">Model Predictive Control</span>
+          <span class="skill-pill">Robot Dynamics</span>
+          <span class="skill-pill">Simulation</span>
+          <span class="skill-pill">Embedded Systems</span>
         </div>
       </div>
+
       <div>
-        <p class="skill-group-label">Analytics & Methodology — 1.5+ years</p>
+        <p class="skill-group-label">Design & Hardware</p>
         <div class="skill-pills">
-          <span class="skill-pill">ETL / ELT Pipelines</span><span class="skill-pill">A/B Testing</span><span class="skill-pill">KPI Analysis</span><span class="skill-pill">Predictive Modeling</span><span class="skill-pill">Data Mining</span><span class="skill-pill">Forecasting</span>
+          <span class="skill-pill">Fusion 360</span>
+          <span class="skill-pill">SolidWorks</span>
+          <span class="skill-pill">Arduino</span>
+          <span class="skill-pill">Raspberry Pi</span>
+          <span class="skill-pill">Sensors</span>
+          <span class="skill-pill">Electro-Mechanical Prototyping</span>
         </div>
       </div>
+
       <div>
-        <p class="skill-group-label">Tools & Other</p>
+        <p class="skill-group-label">How I Think</p>
         <div class="skill-pills">
-          <span class="skill-pill">Postman</span><span class="skill-pill">Figma</span><span class="skill-pill">PowerPoint</span><span class="skill-pill">Canva</span><span class="skill-pill">WordPress</span>
-        </div>
-      </div>
-      <div>
-        <p class="skill-group-label">Soft Skills</p>
-        <div class="skill-pills">
-          <span class="skill-pill">Leadership</span><span class="skill-pill">Communication</span><span class="skill-pill">Attention to Detail</span><span class="skill-pill">Problem Solving</span><span class="skill-pill">Critical Thinking</span><span class="skill-pill">Decision Making</span><span class="skill-pill">Initiative</span><span class="skill-pill">Time Management</span>
+          <span class="skill-pill">First-Principles Thinking</span>
+          <span class="skill-pill">Systems Thinking</span>
+          <span class="skill-pill">Rapid Learning</span>
+          <span class="skill-pill">Technical Communication</span>
+          <span class="skill-pill">Cross-Functional Execution</span>
         </div>
       </div>
     </div>
@@ -371,52 +1037,91 @@
   <div class="container fade-in">
     <p class="section-label">What I've built</p>
     <h2 class="section-title">Projects</h2>
+
     <div class="projects-grid">
-
       <div class="project-card">
-        <div class="project-icon">📊</div>
-        <div class="project-cat">Financial Analytics · Business Operations</div>
-        <div class="project-title">Travel & Expense Budget Analytics</div>
-        <p class="project-desc">Built an internal analytics solution to replace fragmented spreadsheet reporting with a centralized, interactive Qlik Sense dashboard — enabling real-time budget monitoring across teams and leadership groups, tracking $1.2M+ in quarterly spend.</p>
+        <div class="project-icon">🤖</div>
+        <div class="project-cat">Robotics · Controls</div>
+        <div class="project-title">Model Predictive Control for Robotic Arm</div>
+        <p class="project-desc">
+          Built and tuned a Model Predictive Controller for a simulated robotic arm, optimizing motion under dynamic constraints.
+          Focused on control performance, stability, data collection, and learned dynamics integration.
+        </p>
         <div class="project-footer">
-          <span class="tag">QlikSense</span><span class="tag">Qlik Script</span><span class="tag">SQL</span><span class="tag">Excel</span>
-          <a href="https://diamond-dedication-261.notion.site/Travel-Expense-Budget-Analytics-2d56fc0c464d808aa1cac8a8799f5191" class="project-arrow" target="_blank" title="View project">→</a>
+          <span class="tag">MPC</span><span class="tag">Python</span><span class="tag">Robot Dynamics</span><span class="tag">Control</span>
+          <a href="#" class="project-arrow" title="Add project link here">→</a>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-icon">📈</div>
-        <div class="project-cat">Marketing Analytics · Attribution</div>
-        <div class="project-title">Content Effectiveness Analytics</div>
-        <p class="project-desc">Engineered a normalized, attribution-aware analytics framework to measure marketing content ROI across 200+ campaigns. Built a 365-day normalization model enabling fair comparison regardless of campaign duration or timing — integrating data from Snowflake and Salesforce.</p>
+        <div class="project-icon">🦾</div>
+        <div class="project-cat">Robot Learning · Reinforcement Learning</div>
+        <div class="project-title">Deep RL for 2-Link Robotic Arm</div>
+        <p class="project-desc">
+          Implemented Deep Q-Network and reinforcement learning methods for a robotic arm reaching task,
+          exploring how agents learn actuation policies under discrete torque constraints and task-based rewards.
+        </p>
         <div class="project-footer">
-          <span class="tag">Snowflake</span><span class="tag">Salesforce</span><span class="tag">QlikSense</span><span class="tag">SQL</span>
-          <a href="https://diamond-dedication-261.notion.site/Content-Effectiveness-Analytics-2d56fc0c464d80be98f6e6f78b78891b" class="project-arrow" target="_blank" title="View project">→</a>
+          <span class="tag">DQN</span><span class="tag">PPO</span><span class="tag">Python</span><span class="tag">Robotics</span>
+          <a href="#" class="project-arrow" title="Add project link here">→</a>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-icon">🎯</div>
-        <div class="project-cat">Go-To-Market Analytics · Buyer Journey</div>
-        <div class="project-title">Buying Agenda Analytics</div>
-        <p class="project-desc">Analyzed buyer intent signals and buying agendas to understand alignment with content engagement, opportunity creation, and pipeline progression — enabling GTM teams to move beyond surface-level metrics toward interpretable buyer readiness insights.</p>
+        <div class="project-icon">👁️</div>
+        <div class="project-cat">Computer Vision · Biomedical Systems</div>
+        <div class="project-title">Vision-Based Vital Sign Extraction System</div>
+        <p class="project-desc">
+          Designed a biomedical robot pipeline that reads vital signs from non-connected medical devices using OCR,
+          confidence checks, and feedback logic—turning passive displays into actionable, machine-readable data.
+        </p>
         <div class="project-footer">
-          <span class="tag">QlikSense</span><span class="tag">Snowflake</span><span class="tag">Salesforce</span><span class="tag">SQL</span>
-          <a href="https://diamond-dedication-261.notion.site/Buying-Agenda-Analytics-2d56fc0c464d807a8599c779c0f438c6" class="project-arrow" target="_blank" title="View project">→</a>
+          <span class="tag">OpenCV</span><span class="tag">OCR</span><span class="tag">Python</span><span class="tag">Sensing</span>
+          <a href="#" class="project-arrow" title="Add project link here">→</a>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-icon">✈️</div>
-        <div class="project-cat">Product Management · APM Case Study</div>
-        <div class="project-title">Duolingo Travel Mode</div>
-        <p class="project-desc">End-to-end PM case study proposing a new Duolingo product surface for high-intent travel moments — including user research, persona definition, MVP scoping, RICE prioritization, and a metrics-driven A/B experimentation strategy.</p>
+        <div class="project-icon">🛠️</div>
+        <div class="project-cat">Manufacturing · Automation</div>
+        <div class="project-title">ECM Drilling Machine</div>
+        <p class="project-desc">
+          Built controls and safety architecture for a benchtop electrochemical machining system using Raspberry Pi,
+          motor control, current sensing, pump logic, and interlock-driven hardware behavior.
+        </p>
         <div class="project-footer">
-          <span class="tag">Figma</span><span class="tag">Product Strategy</span><span class="tag">User Research</span><span class="tag">Experiment Design</span>
-          <a href="https://diamond-dedication-261.notion.site/Duolingo-Travel-Mode-2f86fc0c464d8019b4abdde693d91810" class="project-arrow" target="_blank" title="View project">→</a>
+          <span class="tag">Raspberry Pi</span><span class="tag">Embedded Control</span><span class="tag">Safety Logic</span><span class="tag">Mechatronics</span>
+          <a href="#" class="project-arrow" title="Add project link here">→</a>
         </div>
       </div>
 
+      <div class="project-card">
+        <div class="project-icon">🐕</div>
+        <div class="project-cat">Robotics · Personal Build</div>
+        <div class="project-title">Service Robot Dog Concept</div>
+        <p class="project-desc">
+          Exploring a hands-on robotic dog platform combining mobility, sensing, and assistive behavior—
+          with the long-term goal of building machines that can genuinely support people in everyday environments.
+        </p>
+        <div class="project-footer">
+          <span class="tag">Quadrupeds</span><span class="tag">Sensors</span><span class="tag">Embedded Systems</span><span class="tag">Robotics</span>
+          <a href="#" class="project-arrow" title="Add project link here">→</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">♻️</div>
+        <div class="project-cat">Robotics · Impact Design</div>
+        <div class="project-title">Nitya — Autonomous Waste Collection Boat</div>
+        <p class="project-desc">
+          Led design and prototyping of a floating waste-collection system using locally sourced materials,
+          integrating CAD, manufacturing, smartphone-based navigation, and autonomous behavior concepts.
+        </p>
+        <div class="project-footer">
+          <span class="tag">CAD</span><span class="tag">Arduino</span><span class="tag">Autonomy</span><span class="tag">Sustainable Design</span>
+          <a href="#" class="project-arrow" title="Add project link here">→</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -425,26 +1130,32 @@
   <div class="container fade-in">
     <p class="section-label">Academic background</p>
     <h2 class="section-title">Education</h2>
+
     <div class="exp-list">
-
       <div class="edu-item">
-        <div class="edu-year">Dec 2025</div>
+        <div class="edu-year">2024 – 2025</div>
         <div>
-          <div class="edu-degree">Master of Science, Management Science & Engineering</div>
+          <div class="edu-degree">Master of Science in Mechanical Engineering</div>
           <div class="edu-school">Columbia University — New York, US</div>
-          <div class="edu-detail">Teaching Assistant: Data Analysis & Visualization · MA Thesis<br><br>Courses: Service Operations Management · Optimization & Simulation · Optimization Models & Methods · Probability, Statistics & Simulation · Operations Consulting · Stochastic Modeling · Corporate Finance, Accounting & Investment Banking · Tools for Analytics · Performance, Objectives & Results Using Data Analytics · Pricing Strategies · Supply Chain Analytics · Managerial Negotiations · Product Management</div>
+          <div class="edu-detail">
+            Focused on robotics, controls, manufacturing systems, dynamics, and intelligent machines.
+            Coursework and projects included robot kinematics, inverse kinematics, forward dynamics,
+            model predictive control, reinforcement learning, sensing, and electro-mechanical system design.
+          </div>
         </div>
       </div>
 
       <div class="edu-item">
-        <div class="edu-year">May 2024</div>
+        <div class="edu-year">2019 – 2023</div>
         <div>
-          <div class="edu-degree">Bachelor of Electrical Engineering</div>
-          <div class="edu-school">Mumbai University — Mumbai, IN</div>
-          <div class="edu-detail">Leadership · TEDxTCET — Licensee & Chief Organiser · Co-curator · Digital Marketing Manager &nbsp;|&nbsp; ISTE (TCET) — Vice-Chairperson · Public Relations Specialist<br><br>Courses: Problem Solving Programming, Database Management System, Advanced Database Management System, Project Management, Information Systems, Internet Programming</div>
+          <div class="edu-degree">Bachelor’s in Mechanical Engineering</div>
+          <div class="edu-school">Sardar Patel College of Engineering — Mumbai, India</div>
+          <div class="edu-detail">
+            Built a strong foundation in thermodynamics, manufacturing, mechanical design, and applied engineering.
+            Developed early interests in additive manufacturing, mechatronics, and hardware systems.
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -453,59 +1164,76 @@
   <div class="container fade-in">
     <p class="section-label">Research</p>
     <h2 class="section-title">Publications</h2>
+
     <div class="pub-card">
-      <div class="pub-badge">IRJET<br>2023</div>
+      <div class="pub-badge">Research</div>
       <div class="pub-body">
-        <div class="pub-title">Data Visualization Advances Business by Promoting Easy Storytelling and Informed Decision-Making Using Microsoft Business Intelligence</div>
-        <div class="pub-meta">International Research Journal of Engineering and Technology (IRJET) · Vol. 10, Issue 10 · Oct 2023</div>
-        <p class="pub-desc">Demonstrates how data visualization using Microsoft Power BI enhances decision-making across sales, marketing, and finance. Through domain-specific dashboards, shows how organizations can transform raw, fragmented data into actionable insights using effective visual storytelling.</p>
-        <a href="https://www.irjet.net/archives/V10/i10/IRJET-V10I1011.pdf" class="pub-link" target="_blank">Read paper →</a>
+        <div class="pub-title">Selected Technical Writing & Research Work</div>
+        <div class="pub-meta">Engineering, systems, and applied problem-solving</div>
+        <p class="pub-desc">
+          My research and technical work reflects a consistent theme: using engineering to make complex systems more understandable,
+          measurable, and useful. Across projects, I’m drawn to building things that connect analysis with action.
+        </p>
+        <a href="#" class="pub-link">Add publication link →</a>
       </div>
     </div>
   </div>
 </section>
 
-
 <section id="blogs">
   <div class="container fade-in">
     <p class="section-label">Writing</p>
-    <h2 class="section-title">Blog</h2>
-    <div id="blog-grid" class="blogs-grid">
-      <a href="https://substack.com/@ishaniprabhudesai1" target="_blank" class="blog-card">
-        <span class="blog-tag">The Analytics Notebook</span>
-        <div class="blog-title">I Pay for Two Music Apps. Neither Knows My Gym Playlist. Here's Why.</div>
-        <p class="blog-excerpt">Why Spotify is the #1 music app right now — an analytical deep-dive into music streaming platforms and what the data actually says.</p>
-        <div class="blog-meta">Apr 15, 2026</div>
+    <h2 class="section-title">Notes from the build</h2>
+
+    <div class="blogs-grid">
+      <a href="#" class="blog-card">
+        <span class="blog-tag">Robotics</span>
+        <div class="blog-title">What factory systems taught me about real-world robotics</div>
+        <p class="blog-excerpt">
+          The real world is noisy, delayed, imperfect, and physical. That’s exactly why it’s interesting.
+        </p>
+        <div class="blog-meta">Add date</div>
       </a>
-      <a href="https://substack.com/@ishaniprabhudesai1" target="_blank" class="blog-card">
-        <span class="blog-tag">The Analytics Notebook</span>
-        <div class="blog-title">Welcome to The Analytics Notebook</div>
-        <p class="blog-excerpt">Projects, lessons, and the messy middle — a Data & BI analyst documenting her work, her learning, and the reality of an analytics career.</p>
-        <div class="blog-meta">Apr 9, 2026</div>
+
+      <a href="#" class="blog-card">
+        <span class="blog-tag">Systems</span>
+        <div class="blog-title">Software is leverage. Hardware is reality.</div>
+        <p class="blog-excerpt">
+          Why the future belongs to engineers who can think across code, controls, machines, and decisions.
+        </p>
+        <div class="blog-meta">Add date</div>
       </a>
     </div>
-    <a href="https://substack.com/@ishaniprabhudesai1" target="_blank" class="blog-substack-btn">View all on Substack →</a>
+
+    <a href="#" class="blog-substack-btn">Add your Substack or blog link →</a>
   </div>
 </section>
 
 <section id="contact">
   <div class="container fade-in">
     <p class="section-label">Get in touch</p>
-    <h2 class="section-title">Let's connect.</h2>
+    <h2 class="section-title">Let's build something real.</h2>
+
     <div class="contact-grid">
       <div>
         <div class="contact-text">
-          <p>I'm always open to discussing data and analytics opportunities, collaborative projects, or just connecting over shared interests in robots.</p>
+          <p>
+            I’m interested in robotics, controls, automation, intelligent machines, and ambitious engineering problems.
+            If you’re working on systems that touch the real world, I’d love to connect.
+          </p>
         </div>
+
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/ishaniprabhudesai/" class="contact-link" target="_blank">
             <span class="contact-icon">in</span> LinkedIn — Ishani Prabhudesai
           </a>
+
           <a href="https://github.com/pro-ish" class="contact-link" target="_blank">
             <span class="contact-icon">⌥</span> GitHub — pro-ish
           </a>
         </div>
       </div>
+
       <div>
         <div class="contact-form">
           <input type="text" placeholder="Your name" />
@@ -524,13 +1252,22 @@
 
 <script>
   const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
   }, { threshold: 0.08 });
+
   document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
-  const titles = ['Business Intelligence Analyst', 'BI & Analytics Engineer', 'Data Analyst & BI Developer'];
+  const titles = [
+    'Robotics Systems Engineer',
+    'Controls + Automation Engineer',
+    'Builder of Intelligent Machines'
+  ];
+
   const el = document.querySelector('.rotating-title');
   let i = 0;
+
   setInterval(() => {
     el.style.opacity = '0';
     el.style.transition = 'opacity 0.4s';
@@ -540,7 +1277,7 @@
       el.style.opacity = '1';
     }, 400);
   }, 3000);
-
 </script>
+
 </body>
 </html>
