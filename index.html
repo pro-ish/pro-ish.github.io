@@ -514,7 +514,21 @@
       color: var(--text);
       font-size: 0.88rem;
     }
-
+    .video-card {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(15,22,33,0.92), rgba(11,16,23,0.98));
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    
+    .video-card iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: block;
+    }
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -771,7 +785,22 @@
       </div>
     </div>
   </section>
-
+  <section id="video">
+    <div class="container fade-in">
+      <div class="section-label">Featured Video</div>
+      <h2 class="section-title">See me in action</h2>
+  
+      <div class="video-card">
+        <iframe
+          src="https://www.youtube.com/embed/xxoHYZFgTvg"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
   <section id="experience">
     <div class="container fade-in">
       <div class="section-label">Experience</div>
